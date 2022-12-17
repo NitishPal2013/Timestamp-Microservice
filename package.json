@@ -1,0 +1,28 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "This application will store name,url and the time of the events.",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r dotenv/config index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NitishPal2013/Timestamp-Microservice.git"
+  },
+  "author": "Nitish Pal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NitishPal2013/Timestamp-Microservice/issues"
+  },
+  "homepage": "https://github.com/NitishPal2013/Timestamp-Microservice#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongodb": "^4.12.1",
+    "nodemon": "^2.0.20"
+  }
+}

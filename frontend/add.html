@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Service</title>
+</head>
+<style>
+ .red{
+    color: rgba(8, 241, 59, 0.87);
+ }
+ .center{
+    display: grid;
+    place-items: center;
+    
+ }
+ .blue{
+    color: rgb(71, 236, 236);
+ }
+ .size{
+    font-size: large;
+ }
+ .sizes{
+    height:22px;
+    width: 250px;
+ }
+ .left{
+    margin-left: 50px;
+ }
+ #btn{
+    border-radius: 2px;
+    background-color: #00ff66a6;
+    color: white;
+    border-color: antiquewhite;
+ }
+</style>
+<body>
+   <button><a href="/">Home</a></button>
+    <h1 class="red center">Your Timestamps.</h1>
+    <div class="center">
+        <form action="/name" method="post">
+            <label class="blue size">Event Name : </label>
+            <input class="sizes" type="text" name="name" value="Project1"><br><br>
+            <label class="left blue size">Link : </label>
+            <input class="sizes" type="url" name="url" value="https://example.com"><br><br>
+            <button id="btn">Add</button>
+          </form> 
+    </div>
+</body>
+<script>
+    var btn = document.querySelector('button');
+    function myfunction(){
+        console.log('submittef');
+    }
+    btn.addEventListener('onclick',myfunction)
+</script>
+</html>

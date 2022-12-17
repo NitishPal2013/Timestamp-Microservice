@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timestamp Service</title>
+</head>
+<style>
+ .red{
+    color: rgba(8, 241, 59, 0.87);
+ }
+ .center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .column{
+    flex-direction: column;
+ }
+ .blue{
+    color: rgb(71, 236, 236);
+ }
+ .size{
+    font-size: large;
+ }
+ .sizes{
+    height:22px;
+    width: 250px;
+ }
+ .left{
+    margin-left: 50px;
+ }
+ #btn{
+    border-radius: 2px;
+    background-color: #00ff66a6;
+    color: white;
+    border-color: antiquewhite;
+ }
+</style>
+<body>
+    <div class="center column">
+        <h1 class="red ">Your Timestamps.</h1>
+        <button id="btn">
+            <a href="/add">Add More</a>
+        </button>
+    </div>
+    <br>
+    <div id = "main" class="center column">
+    </div>
+</body>
+<script>
+    var main = document.getElementById('main');
+    function makehtml(object){
+        return `<li><a href="${object.url}">${object.name}</a></li>`;
+    }
+    async function links(){
+        let obj = await fetch('/data');
+        let data =  await obj.json();
+        let str = '';
+        data.forEach(element => {
+            main.innerHTML += makehtml(element);
+        });
+    }
+    links().catch(err=>console.error(err));
+</script>
+</html>
