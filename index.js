@@ -14,8 +14,7 @@ app.use(body_parser.urlencoded({extended:false}));
 
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+'/frontend/home.html');
-    console.log('root');
+    res.sendFile(__dirname+'/frontend/home.html'); 
 })
 
 app.get('/url',(req,res)=>{
