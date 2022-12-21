@@ -13,7 +13,7 @@ async function listDocs(client){
 //Inserting only one element
 async function InsertOne(client,data){
     let result =  await client.db("timestamp_service").collection("details").insertOne(data);
-    return result;
+    return result?result:{};
 }
 
 //Delete only one element
@@ -22,9 +22,9 @@ async function DeleteOne(query){
 }
 
 //Read one element
-async function FindOne(query){
+async function FindOne(client,query){
     let result = await client.db("timestamp_service").collection("details").findOne(query);
-    if(result) console.log(`Query details: ${result.first} ${result.last}`);
+    return result;
 }
 
 //Update one lement
@@ -34,16 +34,4 @@ async function UpdateOne(query,update){
 }
 
 
-var connection = async function (client){
-
-    try {
-        await client.connect(); // for connection
-    } catch (e) {
-        console.error(e);
-    }
-    finally {
-        await client.close(); // for closing the connection
-    }
-}
-
-module.exports = {connection,FindOne,InsertOne,UpdateOne,DeleteOne,listDocs};
+module.exports = {FindOne,InsertOne,UpdateOne,DeleteOne,listDocs};

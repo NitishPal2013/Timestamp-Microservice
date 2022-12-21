@@ -37,22 +37,21 @@
 </style>
 <body>
    <button><a href="/">Home</a></button>
-    <h1 class="red center">Your Timestamps.</h1>
     <div class="center">
         <form action="/name" method="post">
-            <label class="blue size">Event Name : </label>
+            <label class="blue size">Event Name/URL : </label>
             <input class="sizes" type="text" name="name" value="Project1"><br><br>
-            <label class="left blue size">Link : </label>
-            <input class="sizes" type="url" name="url" value="https://example.com"><br><br>
+            <label class="left blue size">Time : </label>
+            <input class="sizes" type="text" name="time" id="tinput"><br><br>
             <button id="btn">Add</button>
           </form> 
     </div>
 </body>
 <script>
-    var btn = document.querySelector('button');
-    function myfunction(){
-        console.log('submittef');
+   const input = document.getElementById('tinput');
+    function time(){
+        return new Date();
     }
-    btn.addEventListener('onclick',myfunction)
+    input.value = time();
 </script>
 </html>

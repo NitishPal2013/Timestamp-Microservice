@@ -52,7 +52,7 @@
 <script>
     var main = document.getElementById('main');
     function makehtml(object){
-        return `<li><a href="${object.url}">${object.name}</a></li>`;
+        return `<li><a href="/url?name=${object.name}">${object.name}</a></li>`;
     }
     async function links(){
         let obj = await fetch('/data');
